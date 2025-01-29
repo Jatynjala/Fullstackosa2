@@ -1,8 +1,11 @@
-const Render = ({ filtered }) => {
+const Render = ({ filtered, deletePerson }) => {
     return (
         <ul>
         {filtered.map(person =>
-            <p key={person.name}>{person.name} {person.number}</p>
+            <div key={person.name}>
+            <p>{person.name} {person.number}</p>
+            <button onClick={() => deletePerson(person.id)}>delete</button>
+            </div>
         )}
         </ul>
     )
